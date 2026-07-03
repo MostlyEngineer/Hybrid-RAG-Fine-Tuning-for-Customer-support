@@ -1,0 +1,20 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 42,
+  "lora_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "task_type": "CAUSAL_LM",
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "learning_rate": 0.0002,
+  "batch_size": 4,
+  "max_steps": 50,
+  "best_val_loss": 0.21290322580645163,
+  "training_stack_available": false
+}

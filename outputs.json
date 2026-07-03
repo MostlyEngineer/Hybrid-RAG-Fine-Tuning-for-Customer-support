@@ -1,0 +1,16 @@
+{
+  "test_query": "My package still has not arrived and the tracking page has not moved. When will I get it?",
+  "naive_rag_retrieved_source": "C:\\Users\\sysadmin\\Downloads\\Capestone project\\Starter Files\\Dataset\\Dataset\\sop_documents\\order_tracking.md",
+  "naive_rag_retrieved_intent": "order_tracking",
+  "naive_rag_output": "According to the Order Tracking SOP: Helps customers locate an order and interpret its status. Orders that have clearly exceeded their delivery window follow the shipping delays procedure. - **Processing:** payment confirmed, not yet packed. - **Preparing to ship:** packed, awaiting carrier pickup. - **In transit:** carrier has the parcel; tracking events update as it moves. - **Out for delivery:** on the vehicle for delivery that day. - **Delivered:** carrier marked the parcel delivered. - **Exception:** address issue, failed delivery, or held parcel needing action. Locate the order by its identifier and the registered email. Provide the tracking number and carrier link. Tracking can take up to 24 hours to show the first scan ",
+  "baseline_output": "Your order is probably delayed. Most packages arrive within about 5 to 10 business days, but you should check the tracking portal or contact the shipping department for a precise date.",
+  "baseline_eval": {
+    "ground_truth_rule": "Domestic orders deliver within 3-7 business days; international orders within 10-21 business days.",
+    "baseline_output": "Your order is probably delayed. Most packages arrive within about 5 to 10 business days, but you should check the tracking portal or contact the shipping department for a precise date.",
+    "hallucinations_or_gaps": [
+      "does not cite the SOP delivery windows",
+      "contains a likely invented timeline or unsupported action"
+    ],
+    "assessment": "Baseline is unsupported or incomplete"
+  }
+}

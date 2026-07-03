@@ -1,0 +1,485 @@
+source,intent,content
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\account_recovery.md,account_recovery,"# Account Recovery
+
+## When To Use
+Use this procedure when a customer cannot access their account due to a
+lockout, a lost email address, suspected unauthorized access, or a disabled
+account — anything beyond a simple forgotten password (see the password reset
+procedure for that case).
+
+## Identity Verification
+Before any recovery action, verify identity with at least two of: the
+registered email, the last order identifier, the billing postal code, or the
+last four digits of the payment method on file. Never read back full payment
+details or one-time codes to the customer.
+
+## Lockout After Failed Attempts
+Accounts lock for 30 minutes after five failed sign-in attempts. If the
+customer did not make those attempts, treat it as a possible compromise:
+unlock only after identity verification, force a password reset, and
+recommend enabling two-factor authentication.
+
+## Lost Or Changed Email
+If the customer no longer controls the registered email, collect proof of
+identity, update the address through the verified-change workflow, and send a
+confirmation to both the old and new addresses where possible.
+
+## Suspected Compromise
+1. Verify identity.
+2. Lock active sessions and revoke long-lived tokens.
+3. Force a password reset and prompt two-factor enrollment.
+4. Review recent orders and address changes for fraud.
+5. Escalate confirmed account takeover to the security queue.
+
+## Communication
+Reassure the customer, explain each protective step, and confirm the account
+is secured before closing. Document the recovery reason for audit.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\billing_disputes.md,billing_disputes,"# Billing Disputes
+
+## Scope
+Use this when a customer questions a charge: an amount they do not recognize,
+a charge larger than expected, a duplicate charge, or a charge after they
+believed a service had ended. Refund eligibility itself is governed by the
+refund policy; this procedure focuses on investigating the charge.
+
+## Triage
+1. Identify the exact charge: date, amount, and descriptor.
+2. Match it to an order, subscription renewal, tax/shipping component, or
+   pre-authorization hold.
+3. Distinguish a true duplicate from a pending authorization that will drop
+   off automatically within 3–5 business days.
+
+## Common Causes
+- **Pre-authorization holds:** temporary and release on their own; explain
+  rather than refund.
+- **Proration:** plan changes mid-cycle create a partial line item.
+- **Tax or shipping:** shown separately from the item subtotal.
+- **Genuine duplicate or system error:** reverse promptly and prioritize.
+
+## Resolution
+Confirmed billing errors and duplicates are corrected and refunded to the
+original payment method within 3–5 business days. If the customer initiated a
+chargeback with their bank, do not also issue a manual refund — coordinate
+through the payments team to avoid a double credit.
+
+## Agent Steps
+1. Verify identity per account recovery standards before discussing charges.
+2. Explain the charge clearly or open a correction.
+3. Provide a reference number and the expected resolution timeline.
+4. Log the dispute reason for financial reporting.
+
+## Escalation
+Disputed amounts above standard agent authority, chargeback conflicts, or
+suspected fraud route to the billing supervisor via the escalation matrix.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\data_privacy.md,data_privacy,"# Data Privacy
+
+## Scope
+Covers customer requests about their personal data: what is held, access
+copies, correction, deletion, marketing preferences, and concerns about how
+data is used.
+
+## Core Principles
+Collect only what is needed, use it only for stated purposes, and never share
+customer data with unauthorized parties. Agents access customer records only
+to resolve the customer's own request.
+
+## Data Subject Requests
+- **Access:** the customer may request a copy of their personal data.
+  Fulfilled within the statutory window after identity verification.
+- **Correction:** inaccurate details are updated through the verified-change
+  workflow.
+- **Deletion:** account and personal data are deleted on request, except
+  records that must be retained for legal, tax, or fraud-prevention reasons;
+  explain any such retention plainly.
+- **Marketing opt-out:** honored promptly and does not affect essential
+  service messages such as order or security notifications.
+
+## Verification And Safety
+Always verify identity before discussing or changing any personal data, using
+the account recovery standards. Never confirm whether an account exists to an
+unverified caller, and never send personal data to an unverified address.
+
+## Incidents
+Any suspected exposure or unauthorized access to personal data is a P1 under
+the escalation matrix: route immediately to the security queue and avoid
+speculative statements to the customer until the incident lead responds.
+
+## Agent Steps
+1. Verify identity.
+2. Identify the specific right being exercised.
+3. Log the request and route deletion or access requests to the privacy
+   workflow with the statutory deadline noted.
+4. Confirm the action and timeline in writing.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\escalation_matrix.md,escalation_matrix,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\order_tracking.md,order_tracking,"# Order Tracking
+
+## Scope
+Helps customers locate an order and interpret its status. Orders that have
+clearly exceeded their delivery window follow the shipping delays procedure.
+
+## Order States
+- **Processing:** payment confirmed, not yet packed.
+- **Preparing to ship:** packed, awaiting carrier pickup.
+- **In transit:** carrier has the parcel; tracking events update as it moves.
+- **Out for delivery:** on the vehicle for delivery that day.
+- **Delivered:** carrier marked the parcel delivered.
+- **Exception:** address issue, failed delivery, or held parcel needing
+  action.
+
+## Finding The Order
+Locate the order by its identifier and the registered email. Provide the
+tracking number and carrier link. Tracking can take up to 24 hours to show
+the first scan after a label is created, so a label with no movement on day
+one is expected, not lost.
+
+## ""Delivered But Not Received""
+1. Confirm the shipping address on the order.
+2. Ask the customer to check with neighbors, household members, and safe
+   drop-off spots, and to allow 24 hours, as carriers sometimes scan early.
+3. If still missing, open a carrier investigation and offer a replacement or
+   refund per the shipping delays and refund procedures.
+
+## Exceptions
+For address errors caught before delivery, attempt an address correction with
+the carrier. For held parcels, relay the action the customer must take.
+
+## Communication
+Always leave the customer with the tracking reference, the current state in
+plain language, and a clear next step or follow-up time.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\password_reset.md,password_reset,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\payment_methods.md,payment_methods,"# Payment Methods
+
+## Accepted Methods
+The store accepts major credit and debit cards, common digital wallets, and
+bank transfer for eligible regions. Gift cards and store credit can be
+combined with one other payment method at checkout. Cash on delivery is not
+offered for online orders.
+
+## Authorization vs Capture
+At checkout the payment is authorized (a temporary hold) and only captured
+when the order ships. A visible pending hold that does not match the final
+total is normal and resolves within 3–5 business days; explain this before
+treating it as a billing dispute.
+
+## Failed Or Declined Payments
+Common causes: insufficient funds, an expired card, a billing-address
+mismatch, or the bank's fraud screening. Advise the customer to verify card
+details and contact their bank if the decline persists. Never ask the
+customer to send full card numbers or security codes through chat or email.
+
+## Updating Payment Details
+Customers update saved payment methods in account settings. For a failed
+subscription renewal, updating the method and retrying restores the
+subscription without creating a new one.
+
+## Currency And Fees
+Charges are billed in the store's listed currency. Foreign-exchange
+conversion or international fees are set by the customer's bank and are not
+controlled or refundable by support.
+
+## Agent Steps
+1. Verify identity before discussing any payment record.
+2. Identify whether the issue is an authorization hold, a decline, or a true
+   charge problem.
+3. For declines, guide a safe retry; for charge problems, follow billing
+   disputes.
+4. Escalate suspected fraud through the escalation matrix.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\product_return.md,product_return,"# Product Return
+
+## Scope
+Covers physically returning an item, whether for a refund, an exchange, or a
+warranty replacement. The monetary outcome is governed by the refund policy;
+this procedure covers the logistics of getting the item back.
+
+## Return Window
+Items may be returned within 30 days of delivery. They should be in resalable
+condition with original packaging where practical. Defective or
+incorrectly-shipped items can be returned at any reasonable time and never
+incur a restocking deduction.
+
+## Return Methods
+1. Issue a prepaid return label for defective or wrong-item cases at no cost
+   to the customer.
+2. For change-of-mind returns, the customer may be responsible for return
+   shipping unless a free-returns promotion applies.
+3. Provide a return reference and instructions for drop-off or pickup.
+
+## Exchanges
+For size, color, or model swaps, create the replacement order on a hold and
+release it once the carrier scans the returned item, or immediately for
+trusted accounts. Explain any price difference.
+
+## Inspection
+On receipt, the warehouse inspects the item and confirms condition before the
+refund or exchange is finalized, typically within 2 business days of delivery
+back to the facility.
+
+## Agent Steps
+1. Verify the order and reason for return.
+2. Select the correct return method and fee treatment.
+3. Send the label and clear packing instructions.
+4. Set expectations: inspection time plus refund timeline from the refund
+   policy.
+
+## Escalation
+Disputed condition assessments or high-value items follow the escalation
+matrix.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\refund_policy.md,refund_policy,"# Refund Policy
+
+## Eligibility
+Customers may request a refund within 30 days of the original purchase or
+delivery date, whichever is later. To be eligible, the item must be unused or
+defective, and the request must reference a valid order identifier. Digital
+goods and subscription fees already consumed are non-refundable except where
+required by local consumer law.
+
+## Refund Methods
+Approved refunds are issued to the original payment method. If the original
+card or wallet is no longer active, store credit of equal value is offered as
+an alternative. Cash refunds are not provided for online orders.
+
+## Processing Time
+Once a refund is approved, the amount is released within 5–7 business days.
+Bank or card-network posting can add a further 3–5 business days, so advise
+customers that the full cycle may take up to 12 business days. Duplicate or
+accidental charges are prioritized and typically reversed within 3 business
+days.
+
+## Partial Refunds
+Partial refunds apply when only some items in an order are returned, when a
+promotional discount must be recalculated, or when a restocking deduction
+applies to opened non-defective goods. Defective items are always refunded in
+full, including original shipping.
+
+## Agent Steps
+1. Verify the order identifier and purchase date.
+2. Confirm the item condition and refund reason.
+3. Check for prior refunds on the same order to avoid double processing.
+4. Submit the refund and share the expected timeline above.
+5. Log the reason code for reporting.
+
+## Escalation
+If the customer disputes a denied refund, or the amount exceeds standard
+agent authority, route the case to a supervisor using the escalation matrix.
+Never promise an exact posting date controlled by the customer's bank.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\shipping_delays.md,shipping_delays,"# Shipping Delays
+
+## Scope
+This procedure covers orders that have shipped but are running behind the
+estimated delivery date, as well as orders stuck in a pre-shipment state.
+
+## Standard Timelines
+Domestic orders deliver within 3–7 business days; international orders within
+10–21 business days. An order is only considered ""delayed"" once it has passed
+the upper bound of its quoted window. Carrier scans can lag reality by up to
+24 hours, so a single stale tracking event is not by itself a delay.
+
+## Agent Steps
+1. Confirm the order identifier and the original estimated window.
+2. Check the latest carrier scan and the warehouse dispatch status.
+3. If the parcel is in transit but late, open a carrier trace and tell the
+   customer to expect an update within 24–48 hours.
+4. If the parcel shows no movement for more than 5 business days, treat it as
+   potentially lost and offer a replacement shipment or a full refund.
+5. For weather, customs, or peak-season backlogs, explain the cause and give a
+   realistic revised estimate rather than a guaranteed date.
+
+## Compensation
+For significant delays the customer may be offered expedited reshipment at no
+cost, a shipping-fee refund, or a goodwill credit. Goodwill credit beyond the
+standard threshold requires supervisor approval per the escalation matrix.
+
+## Communication
+Acknowledge the inconvenience, give one clear next step, and avoid promising
+delivery dates that depend on third-party carriers. Always leave the customer
+with a tracking reference and a follow-up timeframe.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\subscription_cancellation.md,subscription_cancellation,"# Subscription Cancellation
+
+## Scope
+Covers customers who want to cancel a recurring subscription, pause it, or
+stop auto-renewal. Refunds for already-billed periods follow the refund
+policy.
+
+## Cancellation Options
+- **Cancel at period end (default):** access continues until the paid period
+  expires; no further charges occur.
+- **Immediate cancellation:** access ends now; eligible unused time may be
+  refunded only where the plan terms or local law require it.
+- **Pause:** billing suspends for a chosen interval and resumes automatically
+  unless cancelled.
+
+## Auto-Renewal
+Auto-renewal is on by default. Disabling it keeps the subscription active
+through the current period and prevents the next charge. Confirm to the
+customer the exact date the final access ends.
+
+## Retention
+Offering a pause or a downgrade is acceptable when the customer's concern is
+price or temporary non-use. Do not apply pressure, and always honor a clear
+cancellation request even if a retention offer was declined.
+
+## Agent Steps
+1. Verify identity and locate the active subscription.
+2. Confirm which option the customer wants and the effective date.
+3. Process the change and disable auto-renewal if requested.
+4. Send written confirmation including the last day of access and whether any
+   refund applies.
+5. Log the cancellation reason.
+
+## Communication
+Acknowledge the request promptly, avoid dark patterns, and never silently
+keep a subscription active after a cancellation request. Escalate billing
+conflicts arising from cancellation via the escalation matrix.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\technical_troubleshooting.md,technical_troubleshooting,"# Technical Troubleshooting
+
+## Scope
+Covers product and platform technical issues: app crashes, login failures
+caused by the client, sync errors, broken features, errors on checkout, and
+performance problems. Account access policy questions follow account recovery.
+
+## First-Line Steps
+1. Capture the exact symptom, when it started, and whether it is reproducible.
+2. Record environment: app or browser version, operating system, and device.
+3. Try the standard recovery sequence: update to the latest version, restart
+   the app, clear cache, and retry on another network or device.
+4. Confirm whether the issue is account-specific or affects all users (check
+   the status dashboard for a known incident).
+
+## Crashes And Errors
+For repeatable crashes, collect the action that triggers it and any error
+code or screenshot. For checkout or payment errors, do not retry charges
+repeatedly — confirm whether any charge actually posted before advising a
+second attempt.
+
+## Data And Sync
+If data is missing or not syncing, avoid destructive steps (reinstall,
+account reset) until a backup or server-side copy is confirmed, to prevent
+permanent loss.
+
+## Escalation To Engineering
+Escalate when: the issue is reproducible after first-line steps, multiple
+customers report the same symptom, data loss is involved, or a security flaw
+is suspected. Provide the reproduction steps, environment, and timestamps so
+engineering can act without re-contacting the customer.
+
+## Communication
+Give one clear instruction at a time, set expectations for investigation
+time, and never blame the customer. Follow the escalation matrix for severity
+and routing.
+"
+C:\Users\sysadmin\Downloads\Capestone project\Starter Files\Dataset\Dataset\sop_documents\working_hours.md,working_hours,"# Working Hours
+
+## Support Availability
+Live chat and phone support operate Monday to Friday, 08:00–20:00, and
+weekends 10:00–18:00, in the customer's local business region. Email and
+ticket support are accepted 24/7 and answered during staffed hours.
+
+## Response Targets
+- Live chat: under 2 minutes to first response during staffed hours.
+- Phone: under 5 minutes average wait during staffed hours.
+- Email or ticket: first reply within one business day; complex cases within
+  three business days with interim updates.
+
+## After-Hours Handling
+Outside staffed hours, customers can self-serve through the help center,
+order tracking, and the password reset flow. Critical issues — confirmed
+fraud, account takeover, or a major outage — are monitored continuously and
+actioned by the on-call queue regardless of the clock.
+
+## Holidays And Peak Periods
+On public holidays, support runs reduced weekend hours. During peak sale
+periods, response targets may extend; set expectations honestly rather than
+quoting standard times the team cannot meet.
+
+## Time Zones
+Always confirm the customer's time zone before promising a callback or
+follow-up window, and express commitments in the customer's local time to
+avoid missed connections.
+
+## Agent Guidance
+If a customer is contacting outside staffed hours with a non-critical issue,
+acknowledge receipt, set a realistic next-reply time, and point them to
+relevant self-service procedures. Do not promise immediate human follow-up
+that the current staffing cannot deliver.
+"

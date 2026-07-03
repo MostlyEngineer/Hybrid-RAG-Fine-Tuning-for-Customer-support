@@ -1,0 +1,16 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "mode": "keyword_router_fallback",
+  "reason": "torch/transformers/peft stack unavailable in this runtime",
+  "lora_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "task_type": "CAUSAL_LM",
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ]
+  }
+}
